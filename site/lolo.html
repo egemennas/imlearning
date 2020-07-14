@@ -1,27 +1,132 @@
 <!doctype html>
 <html>
+<header>
+	<img src=https://i.pinimg.com/originals/76/a7/ce/76a7cef34df98f3b087046556b392189.jpg height="150" width="650">
+</header>
 <head>
 	<meta charset="utf-8">
 	<title>Im Learning</title>
+<style>
+	h1 {
+		color: green;
+		text-align: center;
+		font-size: 40px;
+	}
+	h2 {
+		color: darkred;
+		background-color: lightgrey;
+		text-align: center;
+		font-size: 26px;
+	}
+	h3.sadece-ikiveüç {
+		font-style: italic;
+		color: red;
+	}	
+	a {
+		font-size: 18px;
+		font-style: italic;
+		background-color: black;
+		color: yellow;
+		opacity: .5;
+	}
+	.ikinci-derece-liste {
+		font-style: italic;
+	}
+	.liste-başı {
+		font-weight: bold;
+	}
+	article.child-styling > h3 {
+		font-size: 25px;
+	}
+	.stillendirme-türü2 {
+			color: red;
+	}
+	#stillendirme-türü3, .aman-bu-da-olur-mu {
+			color: blue;
+	}
+	#parantez-içi {
+		font-size: 15px;
+	}
+	ul#pseudo-styling-menu li {
+		list-style: none;
+	}
+
+</style>
 </head>
 <body> 
-	<p> çünkü tolga bir güzellik </p>
-<p> <div> yes it is and i know  it asfsafas <div>
-<UL>kgıygıy
-	<li>tobo</li>
-	<li>soso
-		<ol>
-			<li>lolo</li>
-			<li>bobo</li>
-		</ol></li>
-</UL>	
-<section>
-<p><a href="index.html" title="ana sayfa">bakalım olucak mı </a><p/>
+	<h1> HADİ BAKAYIM </h1>
+		<section>
+		<h2> Genel Boş </h2>
+			<p> <div> çünkü tolga bir güzellik </div>
+				<div> yes it is and i know it asfsafas </div>
+			<p/>
+		</section>
+		<section>
+		<h2> Listeleme filan falan </h2>
+			<p>
+				<UL><span class="liste-başı"> kgıygıy </span>
+				<li>tobo</li>
+				<li>soso
+					<ol class="ikinci-derece-liste">
+						<li>lolo</li>
+						<li>bobo</li>
+					</ol></li></UL>
+			<p/>
+		</section>
+		<section>
+		<h2> Linkleme kendi içinde ve dışarı </h2>
+			<p><a href="index.html" title="ana sayfa">bakalım olucak mı </a></p>
+			<p><a href="http://www.linkedin.com/company/artitu" target="_blank" title="artitu linked in"> linked in sayfamız </a>
+		</section>
+		<section>
+		<h2> Section'a atlama aynı sayfada </h2>
+			<p><ul>
+				<li><a href=#mükemmellik> mükemmellik </a></li>
+				<li><a href=#harikalık> harikalık </a></li>
+				</ul></p>
+		</section>
+		<section>
+		<h2> Section'a atlama vs için atlamalık yerler </h2>
+			<h3 id="mükemmellik"> aman allahım mükemmelim </h3>
+				<p> MÜKEMMELLİYET NE MÜKEMMEL BİR ŞEY YAHU </p>
+			<h3 id="harikalık"> var ya ne harikayım hıaaaaaaaaa </h3>
+				<p> KEŞKE HERKES BU KADAR HARİKA OLABİLSE HUE </p>
+		</section>
+		<section>
+		<h2> Foto koymaca </h2>
+			<img src="https://r-cf.bstatic.com/images/hotel/max1024x768/126/126266875.jpg" width="320" height="240" alt="shelter">
+			<div>Eğer width-height belirlemezsen yavaş yüklenirken zıplama yapar ama belirtirsen orada bi foto olucağını bildiği için orası yüklenmese bile aradaki boşluk olur</div>
+		</section>
+		<section>
+		<h2> CLASS STİLLENDİRME DENEMELERİ</h2>
+		<p class="stillendirme-türü2"> Buraya class koyduğum için baştaki bloktaki style elementi burayı etkiliyor. En baştaki h1 muhabbeti element stillendirmesi oluyor. </p>
+		<p id="stillendirme-türü3"> burada ise id ile stillendirme yapıyoruz. Yine önceki style elementinin ikincisindeki hashtagli olan sağolsun. </p>
+		<p class="aman-bu-da-olur-mu"> Burada ise tek CSS elementi ile iki farklı tür stil yapıyoruz. Az önceki stillendirmede 2. tarafta virgülle ayırdık ya ne güzel oldu be. </p>
+			<h3> stilsiz h3 </h3>
+				<p> <div> bu da çok stilsiz oldu ama olsun </div>
+					<div> canı sağolsun </div>
+				</p>
+			<article class="child-styling">
+			<h3 class="sadece-ikiveüç"> bu stilli h3 </h3>
+				<p> bunu en başta style elementinde yazdığım p.sadece-ikiveüç kısmında aynı CSS kodunda iki dereceli seçim yaparak yaptım. bir sonrakini de aynı şekilde.
+				<p> bu paragrafın başlığında aynı zamanda child styling var. yine ilk kısımdaki style elementinde bir yerde article.child-styling > h3 yazıyor. Bu herhangi bir h3 elementi doğrudan bir article elementinin içinde ise ancak ve ancak bu article elementi class olarak child-styling'e sahipse buna etki ediyor. Bu yüzden bir sonraki maddede article altında h3 olsa bile class olmadığı için olmuyor. Burada hem child hem 2 seviyeli selection uyguladım.</p>
+				<p> eğer article ve h3 arasında > kullanmasaydım, article taginin altında herhangi bir seviyede (direkt olmak zorunda değil) bulunan tüm h3ler etkilenecekti. Bu da descendant selector. Bunun ve önceki paragrafın aynısı (child ve descendant) sadece element değil aynı zamanda element-class, class-element için de geçerli. </p>
+			</article>
+			<article>
+			<h3 class="sadece-ikiveüç"> bu da ikinci stilli h3 </h3>
+				<p> tabii ki bu özel stilleme bu ikisini italic yaparken tüm h3'lere geçerli bir stilleme yapsa idim ikisini üst üste koyarak ikisini de uygulayacaktı. Eğer birbirine zıt olsaydı bu iki stilleme, 2 dereceli olanı kabul edip o özeldekileri özel stillemesiyle yapacaktı hangisinin üstte hangisinin altta olduğuna bakmadan. </p>
+			</article>
+		</section>
+		<section>
+		<h2> PSEUDO-CLASS SELECTOR <div id="parantez-içi">(user interaction'a göre değişen styling)</div></h2>
+			<div> disclaimer: burada görülecek tüm stylingler en baştaki style elementinde yapıldı. </div>
+			<ul id="pseudo-styling-menu">
+				<li><a href="index.html"> link </a>
+					<span id="parantez-içi"> (buradaki id ile sadece bu ul'nin altındaki li'leri etkiledik style elementi içindeki hashtag ile.)</span></li>
+				<li><a href="http://www.linkedin.com/company/artitu"> visited </a></li>
+				<li> hover </li>
+				<li> active </li>	
+				<li> nth-child </li>
 
-</section>
-<p>
-	<div> because i am the best in the world <div>
-<p/>
-asfsafa
 </body>
 </html>
