@@ -6,6 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Im Learning</title>
+<link rel="stylesheet" href="stylesheet.css">
 <style>
 	h1 {
 		color: green;
@@ -14,7 +15,7 @@
 	}
 	h2 {
 		color: darkred;
-		background-color: lightgrey;
+		background-color: pink;
 		text-align: center;
 		font-size: 26px;
 	}
@@ -22,13 +23,6 @@
 		font-style: italic;
 		color: red;
 	}	
-	a {
-		font-size: 18px;
-		font-style: italic;
-		background-color: black;
-		color: yellow;
-		opacity: .5;
-	}
 	.ikinci-derece-liste {
 		font-style: italic;
 	}
@@ -49,6 +43,30 @@
 	}
 	ul#pseudo-styling-menu li {
 		list-style: none;
+	}
+	a:link, a:visited {
+		color: black;
+		text-decoration: none;
+		background-color: green;
+		border: 1px solid blue;
+		display: block;
+		width: 200px;
+		text-align: center;
+		margin-bottom: 1px;
+	}
+	a:hover, a:active {
+		background-color: red;
+		color: yellow;
+	}
+	section#nth-child li:nth-child(2) {
+		font-size: 40px;
+	}
+	article#nth-child-odd div:nth-child(odd) {
+		background-color: grey;
+	}
+	article#nth-child-odd div:nth-child(4):hover {
+		background-color: red;
+		cursor: progress;
 	}
 
 </style>
@@ -117,16 +135,34 @@
 				<p> tabii ki bu özel stilleme bu ikisini italic yaparken tüm h3'lere geçerli bir stilleme yapsa idim ikisini üst üste koyarak ikisini de uygulayacaktı. Eğer birbirine zıt olsaydı bu iki stilleme, 2 dereceli olanı kabul edip o özeldekileri özel stillemesiyle yapacaktı hangisinin üstte hangisinin altta olduğuna bakmadan. </p>
 			</article>
 		</section>
-		<section>
+		<section id="nth-child">
 		<h2> PSEUDO-CLASS SELECTOR <div id="parantez-içi">(user interaction'a göre değişen styling)</div></h2>
 			<div> disclaimer: burada görülecek tüm stylingler en baştaki style elementinde yapıldı. </div>
 			<ul id="pseudo-styling-menu">
-				<li><a href="index.html"> link </a>
-					<span id="parantez-içi"> (buradaki id ile sadece bu ul'nin altındaki li'leri etkiledik style elementi içindeki hashtag ile.)</span></li>
-				<li><a href="http://www.linkedin.com/company/artitu"> visited </a></li>
-				<li> hover </li>
-				<li> active </li>	
-				<li> nth-child </li>
+				<li><a href="index.html"> link </a></li>
+				<li><a style="font-weight: lighter;" href="http://www.linkedin.com/company/artitu"> visited </a></li>
+			</ul>
+					<span id="parantez-içi"> (buradaki id ile sadece bu ul'nin altındaki li'leri etkiledik style elementi içindeki hashtag ile. bulletlar yok oldu.)</span>
+					<div> aynı zamanda yine style kısmında hover ve active olanları kullanarak mouse'u üstüne getirdiğimde ve tıklayığ henüz bırakmadığımda farklı stil yapabiliyorum.</div>
+					<div> aynı zamanda da nth-child kullanarak buradaki linklerin sadece ikincisinin bir stil almasını sağladık. bunu id'li bir article taginin içinde bulunan li'leri select ederek nth-child yaparak yaptım.</div>
+				<p><article style="font-size: 1.2em;" id="nth-child-odd">
+					<div> burada her şey büyük çünkü fontsize inline styling var </div>
+					<div> burada yaptığım şey ise </div>
+					<div> yine nth-child kullanarak </div>
+					<div> buradaki alt alta yazdığım div tagli şeylerden </div>
+					<div> sadece tekil numaralı sıradakilerin </div>
+					<div style="font-size: .8em;"> özel olarak (bu in-line styling'den ötürü küçük)</div>
+					<div> arkasının değişmesini sağlamak </div>
+					<div> bunu da nth-child(x) yazarken x yerine rakam değil </div>
+					<div style="text-align: center;"> odd veya even yazarak yapıyorum. (bu arada bu centered çünkü in-line styling kullandım.) </div>
+					<div> ayrıca nth-child ve hover'ı (diğerleri de olur) birleştirerek sadece 4.nün üstüne geldiğimizde farklı reaksiyon yapabiliyorum. Combination. </div>
+				</article></p>
+			<h3 style="color: #0000ff"> WHO WINS? </h3>
+			<p style="text-transform: capitalize;"> bu arada tüm sayfanın arkasının (burada özel belirtilenler hariç. onlar direk diğerinin override ediyor çünkü link burdaki style declarations'tan önce. sonra olsa o kazanırdı) gri olmasının sebebi stylesheet.css'i buraya linklemiş olmam (BU ARADA BU PARAGRAFTAKİ HER KELİME BÜYÜK HARFLE BAŞLIYO ÇÜNKÜ IN-LINE STYLING VAR.)</p>
+			<p> Eğer dışarıdan gelenle burdaki veya iki dışarısı veya iki burası aynı elementin farklı stil tiplerine etki etse idi Declarations Merge olacak idi.</p>
+			<p style="font-size: 120%;"> Score sistemi var bir de direk ayırt edebilmek için iki selector'dan hangisi hangisini yener diye. 4 kutu düşünüp bu kutuların sırası STYLE-ID-CLASS-#ofELEMENTS olacak. hangisinden kaç tane varsa kutularına yazıp en son 4 haneli o sayı hangisinde büyükse o kazanır. hangisi alta yazılmış önemli değil. altına yazılan kazanır muhabbeti puanlar aynı iken (BUNUN BÜYÜK OLMA SEBEBİ IN-LINE STYLING)</p>
+			<p> HER ŞEYE RAĞMEN puanı az olsa her alanda kaybetse bile bir selectoru koyarken örnek: color:green !important; yazarsak, her türlü alıyor. </p>
+		</section>
 
 </body>
 </html>
